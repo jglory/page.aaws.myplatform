@@ -1,0 +1,24 @@
+security:
+  jwt:
+    access-token:
+      validity-seconds: 3600
+    refresh-token:
+      validity-seconds: 1209600
+
+server:
+  port: 8080
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+
+springdoc:
+  swagger-ui:
+    enabled: true  # Swagger UI 활성화
+    path: /swagger-ui.html  # 접속 경로 변경 (기본값: /swagger-ui.html)
+    groups-order: ASC            # 그룹 정렬 순서
+  api-docs:
+    enabled: true  # OpenAPI 문서 생성 활성화
+    path: /v1/api-docs              # OpenAPI spec 파일 경로
+  packages-to-scan: page.aaws.myplatform.api  # 스캔할 패키지 범위 지정

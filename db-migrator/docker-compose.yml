@@ -1,0 +1,12 @@
+services:
+  myplatform-db-migrator:
+    container_name: myplatform-db-migrator
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".env:/var/www/html/.env"
+      - "./migrations:/var/www/html/database/migrations"
+    environment:
+      - "TZ=Asia/Seoul"
+    command: bash -c "tail -f >> /dev/null"
